@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --main-color-blue: #6278f7;
+  --main-color-light-green: #95ffd4;
+  --main-color-gray: #f2f2f2;
+
+  /* team colors */
+  --bg-programming: #d9f7e9;
+  --bg-frontend: #e8f8ff;
+  --bg-data-science: #f0f8e2;
+  --bg-devops: #fde7e8;
+  --bg-ux-design: #fae9f5;
+  --bg-mobile: #fff5d9;
+  --bg-innovation-and-management: #ffeedf;
+
+  /* featured */
+  --featured-programming: #57c278;
+  --featured-frontend: #82cffa;
+  --featured-data-science: #a6d157;
+  --featured-devops: #e06b69;
+  --featured-ux-design: #db6ebf;
+  --featured-mobile: #ffba05;
+  --featured-innovation-and-management: #ff8a29;
+
+  --main-font: "Prata";
+
+  --white: #ffffff;
+  --black: #000000;
+  --font-color-footer: #212121;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: var(--main-font); */
+}
