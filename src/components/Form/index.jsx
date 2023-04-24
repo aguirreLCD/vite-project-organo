@@ -4,37 +4,30 @@ import DropdownList from "../DropdownList";
 import TextField from "../TextField";
 import "./Form.css";
 
-const Form = (props) => {
-  // const teams = [
-  //   "Programming",
-  //   "Front-End",
-  //   "Data-science",
-  //   "Devops",
-  //   "UX & Design",
-  //   "Mobile",
-  //   "Innovation & Management",
-  // ];
+const Form = ({ whenRegistering, teams }) => {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [profilePicture, setProfilePicture] = useState("");
+  const [team, setTeam] = useState("");
 
+  // ao submeter
   const submitingForm = (event) => {
+    //
     event.preventDefault();
-    // console.log("form submited => ", name, role, profilePicture, team);
 
-    props.registeredCollaborator({
+    // ao cadastrar
+    whenRegistering({
       name,
       role,
       profilePicture,
       team,
     });
+
     setName("");
     setRole("");
     setProfilePicture("");
     setTeam("");
   };
-
-  const [name, setName] = useState("");
-  const [role, setRole] = useState("");
-  const [profilePicture, setProfilePicture] = useState("");
-  const [team, setTeam] = useState("");
 
   return (
     <section className="form">
@@ -64,7 +57,7 @@ const Form = (props) => {
         <DropdownList
           needed={true}
           label="Team"
-          itens={props.teams}
+          itens={teams}
           value={team}
           updateField={(value) => setTeam(value)}
         />

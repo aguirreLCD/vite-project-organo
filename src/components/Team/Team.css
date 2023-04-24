@@ -2,6 +2,8 @@
   text-align: center;
   padding: 32px;
   border-style: none;
+  background-image: url(../../assets/img/bg.png);
+  background-repeat: no-repeat;
 }
 
 .team h3 {

@@ -1,21 +1,24 @@
 import "./TextField.css";
 
 // arrow function
-const TextField = (props) => {
+const TextField = ({
+  label,
+  placeholder,
+  value,
+  updateField,
+  needed = false,
+}) => {
   
-  const typing = (event) => {
-    props.updateField(event.target.value);
-  };
 
   return (
     <div className="text-field">
-      <label>{props.label}</label>
+      <label>{label}</label>
       <input
-        value={props.value}
-        onChange={typing}
-        required={props.needed}
+        value={value}
+        onChange={(event) => updateField(event.target.value)}
+        required={needed}
         type="text"
-        placeholder={props.placeholder}
+        placeholder={placeholder}
       />
     </div>
   );

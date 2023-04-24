@@ -2,35 +2,29 @@ import Collaborator from "../Collaborator";
 
 import "./Team.css";
 
-const Team = (props) => {
-  const cssStyles = {
-    backgroundColor: props.secondaryColor,
-  };
-
+const Team = ({ team, collaborators }) => {
   return (
-    // conditional in jsx
-    // (props.collaborators.length > 0) ?
-    // <section></section>
-    // : ""
-
-    props.collaborators.length > 0 && (
-      <section className="team" style={cssStyles}>
+    collaborators.length > 0 && (
+      <section
+        className="team"
+        style={{
+          backgroundColor: team.secondaryColor,
+        }}
+      >
         <h3
           style={{
-            borderColor: props.primaryColor,
+            borderColor: team.primaryColor,
           }}
         >
-          {props.teamName}
+          {team.teamName}
         </h3>
 
         <div className="collaborators">
-          {props.collaborators.map((collaborator) => (
+          {collaborators.map((collaborator, index) => (
             <Collaborator
-              key={collaborator.name}
-              name={collaborator.name}
-              role={collaborator.role}
-              profilePicture={collaborator.profilePicture}
-              teamBg={props.primaryColor}
+              key={index}
+              collaborator={collaborator}
+              teamBg={team.primaryColor}
             />
           ))}
         </div>

@@ -1,6 +1,6 @@
 import "./Collaborator.css";
 
-const Collaborator = ({ name, role, profilePicture, teamBg }) => {
+const Collaborator = ({ collaborator, teamBg }) => {
   return (
     <div className="collaborator">
       <div
@@ -9,11 +9,11 @@ const Collaborator = ({ name, role, profilePicture, teamBg }) => {
           backgroundColor: teamBg,
         }}
       >
-        <img src={profilePicture} alt={name} />
+        <img src={collaborator.profilePicture} alt={collaborator.name} />
       </div>
       <div className="footer-collaborator">
-        <h4>{name}</h4>
-        <h5>{role}</h5>
+        <h4>{collaborator.name}</h4>
+        <h5>{collaborator.role}</h5>
       </div>
     </div>
   );
