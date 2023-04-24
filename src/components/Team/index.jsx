@@ -1,8 +1,19 @@
+import { useState } from "react";
 import Collaborator from "../Collaborator";
 
 import "./Team.css";
 
-const Team = ({ team, collaborators, whenDeleting }) => {
+const Team = ({ team, collaborators }) => {
+  const [teamColor, setTeamColor] = useState(team.primaryColor);
+
+  const changeTeamColor = (event) => {
+    setTeamColor(event.target.value);
+  };
+
+  const deleteCollaborator = (event) => {
+    console.log("deleting...", event.target.parent);
+  };
+
   return (
     collaborators.length > 0 && (
       <section
@@ -11,9 +22,15 @@ const Team = ({ team, collaborators, whenDeleting }) => {
           backgroundColor: team.secondaryColor,
         }}
       >
+        <input
+          type="color"
+          className="input-color"
+          value={teamColor}
+          onChange={changeTeamColor}
+        />
         <h3
           style={{
-            borderColor: team.primaryColor,
+            borderColor: teamColor,
           }}
         >
           {team.teamName}
@@ -21,13 +38,12 @@ const Team = ({ team, collaborators, whenDeleting }) => {
 
         <div className="collaborators">
           {collaborators.map((collaborator, index) => {
-            
             return (
               <Collaborator
                 key={index}
                 collaborator={collaborator}
-                teamBg={team.primaryColor}
-                whenDeleting={whenDeleting}
+                teamBg={teamColor}
+                whenDeleting={deleteCollaborator}
               />
             );
           })}
