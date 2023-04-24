@@ -1,18 +1,17 @@
-import { useState } from "react";
 import Collaborator from "../Collaborator";
 
 import "./Team.css";
 
-const Team = ({ team, collaborators }) => {
-  const [teamColor, setTeamColor] = useState(team.primaryColor);
+const Team = ({ team, collaborators, whenDeleting, changeColor }) => {
+  // const [teamColor, setTeamColor] = useState(team.primaryColor);
 
-  const changeTeamColor = (event) => {
-    setTeamColor(event.target.value);
-  };
+  // const changeTeamColor = (event) => {
+  //   setTeamColor(event.target.value);
+  // };
 
-  const deleteCollaborator = (event) => {
-    console.log("deleting...", event.target.parent);
-  };
+  // const deleteCollaborator = (event) => {
+  //   console.log("deleting...", event.target.parent);
+  // };
 
   return (
     collaborators.length > 0 && (
@@ -25,12 +24,12 @@ const Team = ({ team, collaborators }) => {
         <input
           type="color"
           className="input-color"
-          value={teamColor}
-          onChange={changeTeamColor}
+          value={team.primaryColor}
+          onChange={(event) => changeColor(event.target.value, team.teamName)}
         />
         <h3
           style={{
-            borderColor: teamColor,
+            borderColor: team.primaryColor,
           }}
         >
           {team.teamName}
@@ -42,8 +41,8 @@ const Team = ({ team, collaborators }) => {
               <Collaborator
                 key={index}
                 collaborator={collaborator}
-                teamBg={teamColor}
-                whenDeleting={deleteCollaborator}
+                teamBg={team.primaryColor}
+                whenDeleting={whenDeleting}
               />
             );
           })}

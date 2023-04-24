@@ -5,7 +5,7 @@ import Team from "./components/Team/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 
 function App() {
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       teamName: "Programming",
       primaryColor: "#57c278",
@@ -46,7 +46,7 @@ function App() {
       primaryColor: "#ff8a29",
       secondaryColor: "#ffeedf",
     },
-  ];
+  ]);
 
   const initialContent = [
     {
@@ -221,9 +221,20 @@ function App() {
 
   const [collaborators, setCollaborators] = useState(initialContent);
 
-  // function deleteCollaborator() {
-  //   console.log("deleting...");
-  // }
+  function deleteCollaborator() {
+    console.log("deleting...");
+  }
+
+  function changeTeamColors(color, name) {
+    setTeams(
+      teams.map((team) => {
+        if (team.teamName === name) {
+          team.primaryColor = color;
+        }
+        return team;
+      })
+    );
+  }
 
   return (
     <div className="App">
@@ -245,7 +256,8 @@ function App() {
             collaborators={collaborators.filter(
               (collaborator) => collaborator.team === team.teamName
             )}
-            // whenDeleting={deleteCollaborator}
+            whenDeleting={deleteCollaborator}
+            changeColor={changeTeamColors}
           />
         ))}
       </section>
