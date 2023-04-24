@@ -1,8 +1,14 @@
+import { AiFillCloseCircle } from "react-icons/ai";
 import "./Collaborator.css";
 
-const Collaborator = ({ collaborator, teamBg }) => {
+const Collaborator = ({ collaborator, teamBg, whenDeleting }) => {
   return (
     <div className="collaborator">
+      <AiFillCloseCircle
+        size={25}
+        className="to-delete"
+        onClick={whenDeleting}
+      />
       <div
         className="header-collaborator"
         style={{

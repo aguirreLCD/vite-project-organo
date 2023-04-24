@@ -1,5 +1,6 @@
 .collaborator {
   width: 280px;
+  position: relative;
 }
 
 .collaborator .header-collaborator {
@@ -34,4 +35,10 @@
   line-height: 22px;
   color: var(--font-color-footer);
   padding: 0 16px;
+}
+
+.to-delete {
+  position: absolute;
+  right: -10px;
+  top: -10px;
 }

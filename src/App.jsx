@@ -221,6 +221,10 @@ function App() {
 
   const [collaborators, setCollaborators] = useState(initialContent);
 
+  function deleteCollaborator() {
+    console.log("deleting...");
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -241,6 +245,7 @@ function App() {
             collaborators={collaborators.filter(
               (collaborator) => collaborator.team === team.teamName
             )}
+            whenDeleting={deleteCollaborator}
           />
         ))}
       </section>

@@ -2,7 +2,7 @@ import Collaborator from "../Collaborator";
 
 import "./Team.css";
 
-const Team = ({ team, collaborators }) => {
+const Team = ({ team, collaborators, whenDeleting }) => {
   return (
     collaborators.length > 0 && (
       <section
@@ -20,13 +20,17 @@ const Team = ({ team, collaborators }) => {
         </h3>
 
         <div className="collaborators">
-          {collaborators.map((collaborator, index) => (
-            <Collaborator
-              key={index}
-              collaborator={collaborator}
-              teamBg={team.primaryColor}
-            />
-          ))}
+          {collaborators.map((collaborator, index) => {
+            
+            return (
+              <Collaborator
+                key={index}
+                collaborator={collaborator}
+                teamBg={team.primaryColor}
+                whenDeleting={whenDeleting}
+              />
+            );
+          })}
         </div>
       </section>
     )
