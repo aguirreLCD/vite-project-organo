@@ -265,11 +265,16 @@ function App() {
     );
   }
 
+  function registerNewTeam(newTeam) {
+    setTeams([...teams, { ...newTeam, id: uuidv4() }]);
+  }
+
   return (
     <div className="App">
       <Banner />
 
       <Form
+        registerNewTeam={registerNewTeam}
         teams={teams.map((team) => team.teamName)}
         whenRegistering={(collaborator) =>
           setCollaborators([...collaborators, collaborator])

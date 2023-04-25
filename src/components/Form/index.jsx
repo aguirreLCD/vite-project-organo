@@ -4,11 +4,14 @@ import DropdownList from "../DropdownList";
 import TextField from "../TextField";
 import "./Form.css";
 
-const Form = ({ whenRegistering, teams }) => {
+const Form = ({ whenRegistering, teams, registerNewTeam }) => {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [profilePicture, setProfilePicture] = useState("");
   const [team, setTeam] = useState("");
+
+  const [teamNameNew, setTeamNameNew] = useState("");
+  const [teamColorNew, setTeamColorNew] = useState("");
 
   // ao submeter
   const submitingForm = (event) => {
@@ -62,6 +65,33 @@ const Form = ({ whenRegistering, teams }) => {
           updateField={(value) => setTeam(value)}
         />
         <Button>Create Card</Button>
+      </form>
+
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          registerNewTeam({ teamName: teamNameNew, color: teamColorNew });
+          setTeamNameNew("");
+          setTeamColorNew("");
+        }}
+      >
+        <h2>Register your new team here</h2>
+        <TextField
+          needed
+          label="Name"
+          placeholder="Type your team name..."
+          value={teamNameNew}
+          updateField={(value) => setTeamNameNew(value)}
+        />
+        <TextField
+          needed
+          label="Color"
+          placeholder="Type your team color..."
+          value={teamColorNew}
+          updateField={(value) => setTeamColorNew(value)}
+        />
+
+        <Button>Create New Team</Button>
       </form>
     </section>
   );
