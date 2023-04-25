@@ -78,14 +78,15 @@ const Form = ({ whenRegistering, teams, registerNewTeam }) => {
         <h2>Register your new team here</h2>
         <TextField
           needed
-          label="Name"
+          label="Team Name"
           placeholder="Type your team name..."
           value={teamNameNew}
           updateField={(value) => setTeamNameNew(value)}
         />
         <TextField
           needed
-          label="Color"
+          type="color"
+          label="Team Color"
           placeholder="Type your team color..."
           value={teamColorNew}
           updateField={(value) => setTeamColorNew(value)}

@@ -21,3 +21,8 @@
   box-sizing: border-box;
   color: var(--black);
 }
+
+.text-field-color input {
+  height: 42px;
+  padding: 5px 24px;
+}

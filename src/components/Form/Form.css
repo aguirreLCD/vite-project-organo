@@ -1,11 +1,14 @@
 .form {
   display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 50px 0;
+  margin: 50px 30px;
 }
 
 .form form {
-  width: 80%;
+  /* width: 80%; */
+  flex: 1;
   background-color: var(--main-color-gray);
   border-radius: 20px;
   padding: 36px 64px;
@@ -16,3 +19,4 @@
   color: var(--black);
   font-size: 31px;
 }
+
