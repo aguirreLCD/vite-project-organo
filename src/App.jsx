@@ -247,8 +247,11 @@ function App() {
 
   const [collaborators, setCollaborators] = useState(initialContent);
 
-  function deleteCollaborator() {
-    console.log("deleting...");
+  function deleteCollaborator(id) {
+    // console.log("deleting...");
+    setCollaborators(
+      collaborators.filter((collaborator) => collaborator.id !== id)
+    );
   }
 
   function changeTeamColors(color, id) {

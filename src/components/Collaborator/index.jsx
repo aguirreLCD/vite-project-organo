@@ -7,7 +7,7 @@ const Collaborator = ({ collaborator, teamBg, whenDeleting }) => {
       <AiFillCloseCircle
         size={25}
         className="to-delete"
-        onClick={whenDeleting}
+        onClick={() => whenDeleting(collaborator.id)}
       />
       <div
         className="header-collaborator"
