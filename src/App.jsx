@@ -4,38 +4,47 @@ import Form from "./components/Form";
 import Team from "./components/Team/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 
+import { v4 as uuidv4 } from "uuid";
+
 function App() {
   const [teams, setTeams] = useState([
     {
+      id: uuidv4(),
       teamName: "Programming",
       color: "#57c278",
     },
 
     {
+      id: uuidv4(),
       teamName: "Front-End",
       color: "#82cffa",
     },
 
     {
+      id: uuidv4(),
       teamName: "Data-science",
       color: "#a6d157",
     },
     {
+      id: uuidv4(),
       teamName: "Devops",
       color: "#e06b69",
     },
 
     {
+      id: uuidv4(),
       teamName: "UX & Design",
       color: "#db6ebf",
     },
 
     {
+      id: uuidv4(),
       teamName: "Mobile",
       color: "#ffba05",
     },
 
     {
+      id: uuidv4(),
       teamName: "Innovation & Management",
       color: "#ff8a29",
     },
@@ -43,6 +52,7 @@ function App() {
 
   const initialContent = [
     {
+      id: uuidv4(),
       name: "JULIANA AMOASEI",
       role: "Desenvolvedora de software e instrutora",
       profilePicture:
@@ -50,6 +60,7 @@ function App() {
       team: teams[0].teamName,
     },
     {
+      id: uuidv4(),
       name: "DANIEL ARTINE",
       role: "Engenheiro de Software na Stone Age",
       profilePicture:
@@ -57,6 +68,7 @@ function App() {
       team: teams[0].teamName,
     },
     {
+      id: uuidv4(),
       name: "GUILHERME LIMA",
       role: "Desenvolvedor Python e JavaScript na Alura",
       profilePicture:
@@ -64,6 +76,7 @@ function App() {
       team: teams[0].teamName,
     },
     {
+      id: uuidv4(),
       name: "PAULO SILVEIRA",
       role: "Hipster e CEO da Alura",
       profilePicture:
@@ -71,6 +84,7 @@ function App() {
       team: teams[0].teamName,
     },
     {
+      id: uuidv4(),
       name: "JULIANA AMOASEI",
       role: "Desenvolvedora de software e instrutora",
       profilePicture:
@@ -78,6 +92,7 @@ function App() {
       team: teams[1].teamName,
     },
     {
+      id: uuidv4(),
       name: "DANIEL ARTINE",
       role: "Engenheiro de Software na Stone Age",
       profilePicture:
@@ -85,6 +100,7 @@ function App() {
       team: teams[1].teamName,
     },
     {
+      id: uuidv4(),
       name: "GUILHERME LIMA",
       role: "Desenvolvedor Python e JavaScript na Alura",
       profilePicture:
@@ -92,6 +108,7 @@ function App() {
       team: teams[1].teamName,
     },
     {
+      id: uuidv4(),
       name: "PAULO SILVEIRA",
       role: "Hipster e CEO da Alura",
       profilePicture:
@@ -99,6 +116,7 @@ function App() {
       team: teams[1].teamName,
     },
     {
+      id: uuidv4(),
       name: "JULIANA AMOASEI",
       role: "Desenvolvedora de software e instrutora",
       profilePicture:
@@ -106,6 +124,7 @@ function App() {
       team: teams[2].teamName,
     },
     {
+      id: uuidv4(),
       name: "DANIEL ARTINE",
       role: "Engenheiro de Software na Stone Age",
       profilePicture:
@@ -113,6 +132,7 @@ function App() {
       team: teams[2].teamName,
     },
     {
+      id: uuidv4(),
       name: "GUILHERME LIMA",
       role: "Desenvolvedor Python e JavaScript na Alura",
       profilePicture:
@@ -120,6 +140,7 @@ function App() {
       team: teams[2].teamName,
     },
     {
+      id: uuidv4(),
       name: "PAULO SILVEIRA",
       role: "Hipster e CEO da Alura",
       profilePicture:
@@ -127,6 +148,7 @@ function App() {
       team: teams[2].teamName,
     },
     {
+      id: uuidv4(),
       name: "JULIANA AMOASEI",
       role: "Desenvolvedora de software e instrutora",
       profilePicture:
@@ -134,6 +156,7 @@ function App() {
       team: teams[3].teamName,
     },
     {
+      id: uuidv4(),
       name: "DANIEL ARTINE",
       role: "Engenheiro de Software na Stone Age",
       profilePicture:
@@ -141,6 +164,7 @@ function App() {
       team: teams[3].teamName,
     },
     {
+      id: uuidv4(),
       name: "GUILHERME LIMA",
       role: "Desenvolvedor Python e JavaScript na Alura",
       profilePicture:
@@ -148,6 +172,7 @@ function App() {
       team: teams[3].teamName,
     },
     {
+      id: uuidv4(),
       name: "PAULO SILVEIRA",
       role: "Hipster e CEO da Alura",
       profilePicture:
@@ -155,6 +180,7 @@ function App() {
       team: teams[3].teamName,
     },
     {
+      id: uuidv4(),
       name: "JULIANA AMOASEI",
       role: "Desenvolvedora de software e instrutora",
       profilePicture:
@@ -162,6 +188,7 @@ function App() {
       team: teams[4].teamName,
     },
     {
+      id: uuidv4(),
       name: "DANIEL ARTINE",
       role: "Engenheiro de Software na Stone Age",
       profilePicture:
@@ -169,6 +196,7 @@ function App() {
       team: teams[4].teamName,
     },
     {
+      id: uuidv4(),
       name: "GUILHERME LIMA",
       role: "Desenvolvedor Python e JavaScript na Alura",
       profilePicture:
@@ -176,6 +204,7 @@ function App() {
       team: teams[4].teamName,
     },
     {
+      id: uuidv4(),
       name: "PAULO SILVEIRA",
       role: "Hipster e CEO da Alura",
       profilePicture:
@@ -183,6 +212,7 @@ function App() {
       team: teams[4].teamName,
     },
     {
+      id: uuidv4(),
       name: "JULIANA AMOASEI",
       role: "Desenvolvedora de software e instrutora",
       profilePicture:
@@ -190,6 +220,7 @@ function App() {
       team: teams[5].teamName,
     },
     {
+      id: uuidv4(),
       name: "DANIEL ARTINE",
       role: "Engenheiro de Software na Stone Age",
       profilePicture:
@@ -197,6 +228,7 @@ function App() {
       team: teams[5].teamName,
     },
     {
+      id: uuidv4(),
       name: "GUILHERME LIMA",
       role: "Desenvolvedor Python e JavaScript na Alura",
       profilePicture:
@@ -204,6 +236,7 @@ function App() {
       team: teams[5].teamName,
     },
     {
+      id: uuidv4(),
       name: "PAULO SILVEIRA",
       role: "Hipster e CEO da Alura",
       profilePicture:
@@ -218,10 +251,10 @@ function App() {
     console.log("deleting...");
   }
 
-  function changeTeamColors(color, name) {
+  function changeTeamColors(color, id) {
     setTeams(
       teams.map((team) => {
-        if (team.teamName === name) {
+        if (team.id === id) {
           team.color = color;
         }
         return team;

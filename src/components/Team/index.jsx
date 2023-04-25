@@ -27,7 +27,7 @@ const Team = ({ team, collaborators, whenDeleting, changeColor }) => {
           type="color"
           className="input-color"
           value={team.color}
-          onChange={(event) => changeColor(event.target.value, team.teamName)}
+          onChange={(event) => changeColor(event.target.value, team.id)}
         />
         <h3
           style={{
