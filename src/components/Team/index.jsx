@@ -1,3 +1,5 @@
+import hexToRgba from "hex-to-rgba";
+
 import Collaborator from "../Collaborator";
 
 import "./Team.css";
@@ -18,18 +20,18 @@ const Team = ({ team, collaborators, whenDeleting, changeColor }) => {
       <section
         className="team"
         style={{
-          backgroundColor: team.secondaryColor,
+          backgroundColor: hexToRgba(team.color, 0.3),
         }}
       >
         <input
           type="color"
           className="input-color"
-          value={team.primaryColor}
+          value={team.color}
           onChange={(event) => changeColor(event.target.value, team.teamName)}
         />
         <h3
           style={{
-            borderColor: team.primaryColor,
+            borderColor: team.color,
           }}
         >
           {team.teamName}
@@ -41,7 +43,7 @@ const Team = ({ team, collaborators, whenDeleting, changeColor }) => {
               <Collaborator
                 key={index}
                 collaborator={collaborator}
-                teamBg={team.primaryColor}
+                teamBg={team.color}
                 whenDeleting={whenDeleting}
               />
             );
