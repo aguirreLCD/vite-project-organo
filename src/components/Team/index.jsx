@@ -4,17 +4,13 @@ import Collaborator from "../Collaborator";
 
 import "./Team.css";
 
-const Team = ({ team, collaborators, whenDeleting, changeColor }) => {
-  // const [teamColor, setTeamColor] = useState(team.primaryColor);
-
-  // const changeTeamColor = (event) => {
-  //   setTeamColor(event.target.value);
-  // };
-
-  // const deleteCollaborator = (event) => {
-  //   console.log("deleting...", event.target.parent);
-  // };
-
+const Team = ({
+  team,
+  collaborators,
+  whenDeleting,
+  changeColor,
+  whenFavoriting,
+}) => {
   return (
     collaborators.length > 0 && (
       <section
@@ -45,6 +41,7 @@ const Team = ({ team, collaborators, whenDeleting, changeColor }) => {
                 collaborator={collaborator}
                 teamBg={team.color}
                 whenDeleting={whenDeleting}
+                whenFavoriting={whenFavoriting}
               />
             );
           })}
